@@ -1,6 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Mes Projets</title>
+    <title>Projets</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,31 +19,6 @@
 
         header h1 {
             margin: 0;
-        }
-
-        .social-buttons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-buttons a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        .social-buttons img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: transform 0.2s;
-        }
-
-        .social-buttons img:hover {
-            transform: scale(1.2);
-        }
-
-        nav {
-            background-color: #000000;
         }
 
         nav ul {
@@ -67,21 +43,38 @@
             text-decoration: underline;
         }
 
-        section {
-            padding: 20px;
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin: 20px;
-            background-color: rgb(0, 0, 0);
+        }
+
+        .project-item {
+            width: 300px;
+            margin: 15px;
+            background-color: #111;
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        h2 {
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .project-item a {
             color: #680303;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
 
-        ul {
-            list-style: square;
-            margin-left: 20px;
+        .project-item a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -89,9 +82,6 @@
             padding: 10px;
             background-color: #333;
             color: rgb(255, 255, 255);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
@@ -103,13 +93,30 @@
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section>
-        <h2>Projets</h2>
-        <p>Liste de projets ici.</p>
+        <div class="project-list">
+            <div class="project-item">
+                <img src="tetris.jpg" alt="SAE TETRIS">
+                <a href="tetris.html">Voir SAE TETRIS</a>
+            </div>
+            <div class="project-item">
+                <img src="unesco.jpg" alt="SAE UNESCO">
+                <a href="unesco.html">Voir SAE UNESCO</a>
+            </div>
+            <div class="project-item">
+                <img src="bdd.jpg" alt="SAE Base De Données">
+                <a href="bdd.html">Voir SAE Base De Données</a>
+            </div>
+        </div>
     </section>
+
+    <footer>
+        <p>© 2024 Mon Portfolio - BEN HAMOUDA Issam</p>
+    </footer>
 </body>
 </html>
