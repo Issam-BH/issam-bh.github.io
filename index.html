@@ -1,345 +1,467 @@
-<html>
- 
+<!DOCTYPE html>
+<html lang="fr">
 <head>
- 
-    <title>Mon Portfolio</title>
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Issam BEN HAMOUDA -  BUT Informatique</title>
     <style>
- 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --highlight-bg: #f0f8ff;
+        }
+
         body {
- 
-            font-family: Arial, sans-serif;
- 
-            margin: 0;
- 
-            padding: 0;
- 
-            background-color: #000000;
- 
-            color: #ffffff;
- 
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
- 
 
- 
         header {
- 
-            background-color: #680303;
- 
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2.5rem 0;
             text-align: center;
- 
-            padding: 20px 0;
- 
         }
- 
 
- 
-        header h1 {
- 
-            margin: 0;
- 
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
- 
 
- 
-        .social-buttons {
- 
-            text-align: center;
- 
-            margin-top: 20px;
- 
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
         }
- 
 
- 
-        .social-buttons a {
- 
-            display: inline-block;
- 
-            margin: 0 10px;
- 
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: normal;
         }
- 
 
- 
-        .social-buttons img {
- 
-            width: 40px;
- 
-            height: 40px;
- 
-            border-radius: 50%;
- 
-            transition: transform 0.2s;
- 
-        }
- 
-
- 
-        .social-buttons img:hover {
- 
-            transform: scale(1.2);
- 
-        }
- 
-
- 
         nav {
- 
-            background-color: #000000;
- 
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
         }
- 
 
- 
         nav ul {
- 
+            display: flex;
+            justify-content: center;
             list-style: none;
- 
-            padding: 0;
- 
-            text-align: center;
- 
-            margin: 0;
- 
+            gap: 2rem;
         }
- 
 
- 
-        nav ul li {
- 
-            display: inline;
- 
-            margin: 0 15px;
- 
-        }
- 
-
- 
-        nav ul li a {
- 
-            color: #ffffff;
- 
+        nav a {
+            color: var(--white);
             text-decoration: none;
- 
             font-weight: bold;
- 
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
- 
 
- 
-        nav ul li a:hover {
- 
-            text-decoration: underline;
- 
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
- 
 
- 
+        nav a.active {
+            background-color: var(--white);
+            color: var(--secondary-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
         section {
- 
-            padding: 20px;
- 
-            margin: 20px;
- 
-            background-color: rgb(0, 0, 0);
- 
-            border-radius: 8px;
- 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- 
+            margin-bottom: 3rem;
         }
- 
 
- 
         h2 {
- 
-            color: #680303;
- 
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
         }
- 
 
- 
-        ul {
- 
-            list-style: square;
- 
-            margin-left: 20px;
- 
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
         }
- 
 
- 
-        footer {
- 
-            text-align: center;
- 
-            padding: 10px;
- 
-            background-color: #333;
- 
-            color: rgb(255, 255, 255);
- 
-            position: fixed;
- 
-            bottom: 0;
- 
+        .about-text {
+            flex: 2;
+        }
+
+        .skills {
+            flex: 1;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 12px;
+        }
+
+        .social-icon img {
             width: 100%;
- 
+            height: 100%;
+            object-fit: contain;
         }
- 
+
+        .social-name {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .project-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-date {
+            color: #777;
+        }
+
+        .project-description {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info .phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .contact-info .phone-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .form-note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
     </style>
- 
 </head>
- 
 <body>
- 
     <header>
- 
-        <h1>Mon Portfolio</h1>
- 
-        <p>Bienvenue dans mon portfolio ! Je suis Issam BEN HAMOUDA et voici mes réalisations, compétences et objectifs.</p>
- 
-        <div class="social-buttons">
- 
-            <a href="https://www.linkedin.com/in/issam-ben-hamouda-352010339/" target="_blank">
- 
-                <img src="linkedin.png" alt="LinkedIn">
- 
-            </a>
- 
-            <a href="https://github.com/Issam-BH" target="_blank">
- 
-                <img src="github.png" alt="GitHub">
- 
-            </a>
- 
-
-            <a href="CV Issam BEN HAMOUDA.pdf" target="_blank">
- 
-                <img src="cv.png" alt="CV">
- 
-            </a>
- 
+        <div class="profile-container">
+            <h1>Issam BEN HAMOUDA</h1>
+            <p class="subtitle">Étudiant en BUT Informatique - 1ère année</p>
         </div>
-
- 
     </header>
- 
+
     <nav>
- 
         <ul>
- 
-            <li><a href="#intro">Introduction</a></li>
- 
-            <li><a href="#objectif">Objectif Professionnel</a></li>
- 
-            <li><a href="#cv">Curriculum Vitæ</a></li>
- 
-            <li><a href="#compétences">Compétences</a></li>
- 
-            <li><a href="projets.html">Projets</a></li>
- 
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="projets.html">Mes Projets</a></li>
             <li><a href="contact.html">Contact</a></li>
- 
         </ul>
- 
     </nav>
- 
 
- 
-    <section id="intro">
- 
-        <h2>Introduction</h2>
- 
-        <p>Ce portfolio présente mon parcours professionnel, mes compétences et mes projets réalisés. Mon objectif est de démontrer mon potentiel et de vous convaincre que je suis la personne qu'il vous faut pour rejoindre votre équipe.</p>
- 
-    </section>
- 
+    <main>
+        <section id="about">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Bonjour ! Je suis étudiant en première année de BUT Informatique à l'IUT de Marne La-Vallée . Passionné par la programmation, je suis à la recherche de nouvelles connaissances et compétences dans l'informatique.</p>
+                    <p>Grâce à ma formation, j’ai acquis des compétences en programmation (Python, Java, C), en gestion de projets informatiques et en résolution de problématiques techniques. Je maîtrise la création de sites web (HTML, CSS) et la gestion de bases de données (SQL, PHP). J’ai conçu des sites et portfolios, tout en développant un sens de la rigueur et du travail en équipe, notamment en tant que chef de projet universitaire.</p>
+                    <p>Ce portfolio présente mes projets universitaires ainsi que mes compétences techniques. N'hésitez pas à me contacter pour échanger sur des projets !</p>
+                </div>
+                <div class="skills">
+                    <h3>Compétences</h3>
+                    <ul class="skills-list">
+                        <li>HTML / CSS</li>
+                        <li>PHP</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>MySQL/PostgreSQL</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
- 
-    <section id="objectif">
- 
-        <h2>Objectif</h2>
- 
-        <p>Mon objectif au long terme est de pouvoir rejoindre une équipe de développement, mon objectif à court terme est de finir mes études en BUT puis aller en MASTER en faisant de l'alternance pendant ces années.</p>
- 
-    </section>
- 
+        <section id="projects-preview">
+            <h2>Projets récents</h2>
+            <div class="projects-grid">
+                <a href="projets.html#projet-tetris" class="project-card">
+                    <div class="project-image">🟥🟥🟥🟥</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Projet Tetris</h3>
+                        <p>Ce projet consiste à développer un jeu Tetris en fonction des demandes clients..</p>
+                    </div>
+                </a>
+                <a href="projets.html#unesco" class="project-card">
+                    <div class="project-image">🌐</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Projet UNESCO</h3>
+                        <p>Projet site web où le but est de créer un site internet, sur un lieu touristique, dans notre cas les quais de seine de Paris.</p>
+                    </div>
+                </a>
+                <a href="projets.html#base-donnees" class="project-card">
+                    <div class="project-image">🔍</div>
+                    <div class="project-info">
+                        <h3 class="project-title">SAE Base de données</h3>
+                        <p>Projet Base de données avec du SQL et du PHP pour gérer le cas d'un vétérinaire. </p>
+                    </div>
+                </a>
+            </div>
+        </section>
 
- 
-    <section id="cv">
- 
-        <h2>Curriculum Vitæ</h2>
- 
-        <h3>Expérience Professionnelle</h3>
- 
-        <ul>
- 
-            <li>Stagiaire dans une concession Volkswagen - 2020</li>
- 
-        </ul>
- 
+        <section id="contact">
+            <h2>Contact & Liens</h2>
+            <div class="social-links">
+                <a href="CV Issam BEN HAMOUDA.pdf" class="social-link">
+                    <div class="social-icon">
+                        <img src="cv.png" alt="CV">
+                    </div>
+                    <span class="social-name">CV</span>
+                </a>
+                <a href="https://github.com/Issam-BH" class="social-link">
+                    <div class="social-icon">
+                        <img src="github.png" alt="GitHub">
+                    </div>
+                    <span class="social-name">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/issam-ben-hamouda-352010339/" class="social-link">
+                    <div class="social-icon">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </div>
+                    <span class="social-name">LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
- 
-        <h3>Formations</h3>
- 
-        <ul>
- 
-            <li>2024-2027 : BUT Informatique - Université Gustave Eiffel, Champs-Sur-Marnes</li>
- 
-            <li>2023-2024 : Bac général (spécialité mathématiques, informatique) mention Assez Bien - Lycée Georges Clémenceau Villemomble</li>
- 
-            <li>2023-2024 : Certification PIX (553/812) - Lycée Georges Clémenceau Villemomble</li>
- 
-            <li>2020 : Brevet des collèges mention très bien</li>
- 
-        </ul>
- 
-    </section>
- 
-
- 
-    <section id="compétences">
- 
-        <h2>Compétences</h2>
- 
-        <ul>
- 
-            <li>HTML5, CSS3</li>
- 
-            <li>Développement en Python</li>
- 
-            <li>Gestion de base de données avec MySQL et Xampp</li>
- 
-        </ul>
- 
-    </section>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-    <hr>
- 
-
- 
     <footer>
- 
-        <p>© 2024 Mon Portfolio - BEN HAMOUDA Issam</p>
- 
+        <p>&copy; 2024 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
     </footer>
- 
 </body>
- 
 </html>
