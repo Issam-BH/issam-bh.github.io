@@ -134,6 +134,28 @@
             margin-bottom: 1rem;
         }
 
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .github-link img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .github-link:hover {
+            background-color: var(--secondary-color);
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -170,60 +192,135 @@
     <main class="project-page">
         <section>
             <h2>Projets universitaires</h2>
-            
+
+            <!-- Projet Tetris -->
             <div id="projet-tetris" class="project-item">
                 <div class="project-header">
                     <h3 class="project-title">SAE Tetris</h3>
                     <span class="project-date">Septembre 2024-Janvier 2025</span>
                 </div>
                 <div class="project-description">
-                    <p>Ce projet consiste à développer un jeu Tetris en fonction des demandes clients dans le cadre de la programmation en Python</p>
+                    <p>Ce projet consiste à développer un jeu Tetris en fonction des demandes clients dans le cadre de la programmation en Python.</p>
                     <p>Fonctionnalités principales :</p>
                     <ul>
-                        <li>Reproduction d'un jeu de base avec les 5 pièces donnés.</li>
-                        <li>Ajouts de plusieurs variantes possibles</li>
-                        <li>Sauvegarde de jeu et de paramètres</li>
-                        <li>Ajouts de mode bonus</li>
+                        <li>Reproduction d'un jeu de base avec les 5 pièces données.</li>
+                        <li>Ajouts de plusieurs variantes possibles pour enrichir l'expérience.</li>
+                        <li>Sauvegarde et chargement de parties.</li>
+                        <li>Ajout d'un mode bonus pour plus de défi.</li>
                     </ul>
+                    <a class="github-link" href="https://github.com/TAYOKEN/tetris" target="_blank">
+                        <img src="github.png" alt="GitHub Logo"> Code
+                    </a>
                 </div>
             </div>
 
+            <!-- Projet UNESCO -->
             <div id="unesco" class="project-item">
                 <div class="project-header">
                     <h3 class="project-title">Projet UNESCO</h3>
                     <span class="project-date">Septembre 2024-Juin 2025</span>
                 </div>
                 <div class="project-description">
-                    <p>Projet site web où le but est de créer un site internet, sur un lieu touristique en partenariat avec l'UNESCO , dans notre cas les quais de seine de Paris. Nous utilisons du HTML , CSS ainsi que du PHP</p>
+                    <p>Ce projet avait pour objectif de créer un site internet dédié à un lieu touristique en partenariat avec l'UNESCO. Nous avons choisi de mettre en valeur les quais de Seine à Paris. Le site a été conçu en HTML, CSS et PHP.</p>
                     <p>Le site comprend :</p>
                     <ul>
-                        <li>Une page d'accueil avec différents articles</li>
-                        <li>Différents parcours d'itinéraires</li>
-                        <li>Des pages d'histoire sur le lieu</li>
+                        <li>Une page d'accueil dynamique avec des articles illustrés.</li>
+                        <li>Des parcours interactifs pour découvrir les quais.</li>
+                        <li>Des pages retraçant l'histoire et la culture du lieu.</li>
                     </ul>
+                    <a class="github-link" href="https://github.com/TAYOKEN/SAE-UNESCO" target="_blank">
+                        <img src="github.png" alt="GitHub Logo"> Code
+                    </a>
                 </div>
             </div>
 
+            <!-- Projet Base de Données -->
             <div id="base-donnees" class="project-item">
                 <div class="project-header">
                     <h3 class="project-title">SAE Base de données</h3>
                     <span class="project-date">Septembre 2024 - Juin 2025</span>
                 </div>
                 <div class="project-description">
-                    <p>Projet Base de données avec du SQL et du PHP pour gérer le cas d'un vétérinaire.</p>
-                    <p>Le projet comprend :</p>
+                    <p>Ce projet consistait à concevoir et développer une base de données complète pour la gestion d'un cabinet vétérinaire.</p>
+                    <p>Étapes clés :</p>
                     <ul>
-                        <li>Modélisation conceptuelle (MCD)</li>
-                        <li>Implémentation en SQL puis en PostgreSQL</li>
-                        <li>Implémentation de la BDD dans un site web avec du PHP</li>
+                        <li>Création d'un Modèle Conceptuel de Données (MCD) clair et détaillé.</li>
+                        <li>Implémentation en SQL et migration vers PostgreSQL.</li>
+                        <li>Développement d'une interface web avec PHP pour interagir avec la base.</li>
                     </ul>
+                    <a class="github-link" href="https://github.com/TAYOKEN/Sae_BDD" target="_blank">
+                        <img src="github.png" alt="GitHub Logo"> Code
+                    </a>
                 </div>
             </div>
+
+            <!-- Projet Algorithmes de graphes -->
+            <div id="algorithmes-graphes" class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Implémentation des algorithmes de graphes en Python</h3>
+                    <span class="project-date">2024 - 2025</span>
+                </div>
+                <div class="project-description">
+                    <p>Dans le cadre de mon année de BUT 1 Informatique à l'université Gustave Eiffel, j'ai réalisé un projet d'implémentation des algorithmes de graphes étudiés en cours.</p>
+                    <p>Les algorithmes implémentés :</p>
+                    <ul>
+                        <li>Manipulation de mots : calcul des préfixes, suffixes, facteurs et miroir d'un mot.</li>
+                        <li>Opérations sur les langages : concaténation, puissance, génération de tous les mots possibles sur un alphabet.</li>
+                        <li>Automates finis : création, lecture et simulation d'automates pour vérifier l'appartenance d'un mot à un langage.</li>
+                        <li>Propriétés et transformations : déterminisation, complétion, complémentation et renommage des automates.</li>
+                        <li>Opérations entre automates : intersection, différence, automates pour préfixes, suffixes, facteurs et miroirs.</li>
+                        <li>Minimisation : implémentation de l'algorithme de Moore pour réduire le nombre d'états.</li>
+
+                    </ul>
+                    <p>Ce projet m'a permis de développer une bonne compréhension des structures de données avancées et de l'optimisation des performances.</p>
+                </div>
+            </div>
+
+            <!-- Projet SilvEterna -->
+            <div id="silveternia" class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Développement d'un site en PHP/PostgreSQL - SilvEterna</h3>
+                    <span class="project-date">2024 - 2025</span>
+                </div>
+                <div class="project-description">
+                    <p>SilvEterna est un projet académique dont l'objectif était de créer un réseau social destiné aux seniors pour faciliter les échanges et la création de liens sociaux.</p>
+                    <p>Fonctionnalités principales :</p>
+                    <ul>
+                        <li>Création et gestion de profils utilisateurs.</li>
+                        <li>Publication d'évènements et d'un agenda d'évènements public ou privée.</li>
+                        <li>Fonctionnalité de messagerie privée.</li>
+                        <li>Utilisation d'une base de données PostgreSQL robuste pour la gestion des données.</li>
+                    </ul>
+                    <a class="github-link" href="https://github.com/yevhen-kefa/SilvEterna" target="_blank">
+                        <img src="github.png" alt="GitHub Logo"> Code
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet Yams/Yatzee -->
+            <div id="yams" class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Développement d'un jeu Yams/Yatzee en Java</h3>
+                    <span class="project-date">2024 - 2025</span>
+                </div>
+                <div class="project-description">
+                    <p>Dans ce projet, l'objectif était de concevoir un jeu de Yams (ou Yatzee) en Java avec une interface conviviale et une logique de jeu complète.</p>
+                    <p>Caractéristiques :</p>
+                    <ul>
+                        <li>Calcul automatique des scores selon les règles officielles.</li>
+                        <li>Possibilité de jouer en solo ou en multijoueur.</li>
+                    </ul>
+                    <a class="github-link" href="https://github.com/Issam-BH/YAMS_JAVA" target="_blank">
+                        <img src="github.png" alt="GitHub Logo"> Code
+                    </a>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
+        <p>&copy; 2025 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
     </footer>
 </body>
 </html>
