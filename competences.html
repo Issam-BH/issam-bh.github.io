@@ -146,6 +146,8 @@
         .level-section {
             padding: 1.5rem;
             border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
         }
 
         .level-section:last-child {
@@ -208,6 +210,14 @@
             background-color: var(--secondary-color);
         }
 
+        .badge-link.but2-badge {
+            background-color: #f39c12; /* Une couleur distincte pour les projets BUT 2 */
+        }
+
+        .badge-link.but2-badge:hover {
+            background-color: #d68910;
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -262,27 +272,26 @@
                 <div class="level-section level-but1">
                     <div class="level-title">🎓 BUT 1 : Développer des applications simples</div>
                     <ul>
-                        <li>Écrire des programmes algorithmiques basiques (Python, Java).</li>
-                        <li>Développer des interfaces utilisateur web interactives (HTML, CSS, JS).</li>
-                        <li>Respecter les principes de bonne qualité de code.</li>
+                        <li>Écrire des programmes algorithmiques (Python, Java).</li>
+                        <li>Développer des interfaces web et des applications complètes (HTML, CSS, PHP).</li>
+                        <li>Respecter les principes de qualité de code.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
                         <a href="projets.html#projet-tetris" class="badge-link">SAE Tetris (Python)</a>
                         <a href="projets.html#yams" class="badge-link">Yams (Java)</a>
+                        <a href="projets.html#silveternia" class="badge-link">SilvEterna (PHP)</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
                     <div class="level-title">🚀 BUT 2 : Développer des applications complexes</div>
                     <ul>
-                        <li>Concevoir des architectures applicatives complètes (Frontend & Backend).</li>
-                        <li>Utiliser des frameworks modernes (React, Node.js).</li>
-                        <li>Intégrer et assembler des modules hétérogènes.</li>
+                        <li>Concevoir des architectures applicatives hétérogènes.</li>
+                        <li>Intégrer et assembler des modules (PHP, Java, C).</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">SilvEterna (PHP Fullstack)</a>
-                        <span class="badge-link" style="background-color: #7f8c8d;">Site LEGO e-commerce (En cours)</span>
+                        <span class="badge-link but2-badge">Site e-commerce LEGO (En cours)</span>
                     </div>
                 </div>
             </div>
@@ -300,23 +309,24 @@
                 <div class="level-section level-but1">
                     <div class="level-title">🎓 BUT 1 : Appréhender les structures de base</div>
                     <ul>
-                        <li>Choisir les structures de données adaptées à un problème.</li>
+                        <li>Choisir les structures de données adaptées (Graphes, Automates).</li>
                         <li>Évaluer la complexité d'un algorithme classique.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
                         <a href="projets.html#projet-tetris" class="badge-link">Logique Tetris</a>
+                        <a href="projets.html#algorithmes-graphes" class="badge-link">Algorithmes de graphes</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Concevoir des solutions algorithmiques</div>
+                    <div class="level-title">🚀 BUT 2 : Concevoir des solutions performantes</div>
                     <ul>
-                        <li>Implémenter des algorithmes avancés (Graphes, Automates).</li>
-                        <li>Optimiser le temps d'exécution et la consommation mémoire.</li>
+                        <li>Optimiser le temps d'exécution d'une application métier.</li>
+                        <li>Gérer efficacement l'assemblage de différents langages.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#algorithmes-graphes" class="badge-link">Algorithmes de graphes (Python)</a>
+                        <span class="badge-link but2-badge">Optimisation E-commerce LEGO</span>
                     </div>
                 </div>
             </div>
@@ -332,26 +342,28 @@
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Exploiter une base de données</div>
+                    <div class="level-title">🎓 BUT 1 : Exploiter et concevoir une BDD</div>
                     <ul>
-                        <li>Créer et interroger une base de données relationnelle (SQL).</li>
-                        <li>Écrire des requêtes simples et avec jointures.</li>
+                        <li>Modéliser des données (MCD, MLD).</li>
+                        <li>Créer et interroger une base relationnelle (SQL, PostgreSQL).</li>
+                        <li>Relier une base de données à une interface Web (PHP).</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
+                        <a href="projets.html#base-donnees" class="badge-link">SAE BDD (Vétérinaire)</a>
+                        <a href="projets.html#silveternia" class="badge-link">BDD SilvEterna</a>
                         <a href="projets.html#unesco" class="badge-link">Projet UNESCO</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Concevoir et administrer</div>
+                    <div class="level-title">🚀 BUT 2 : Administrer des bases complexes</div>
                     <ul>
-                        <li>Modéliser des données (MCD, MLD, MPD).</li>
-                        <li>Gérer une base de données avancée avec PostgreSQL ou MongoDB.</li>
-                        <li>Optimiser les requêtes et assurer l'intégrité des données.</li>
+                        <li>Gérer des bases de données avancées pour des sites e-commerce.</li>
+                        <li>Assurer la sécurité et l'intégrité des transactions SQL.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#base-donnees" class="badge-link">SAE Base de données (Vétérinaire)</a>
+                        <span class="badge-link but2-badge">BDD E-commerce LEGO</span>
                     </div>
                 </div>
             </div>
@@ -369,24 +381,25 @@
                 <div class="level-section level-but1">
                     <div class="level-title">🎓 BUT 1 : Comprendre les besoins</div>
                     <ul>
-                        <li>Identifier les exigences d'un client et rédiger un cahier des charges.</li>
-                        <li>Utiliser des outils de gestion de projet collaboratifs.</li>
+                        <li>Assumer le rôle de chef de projet.</li>
+                        <li>Identifier les exigences d'un client (réunions, cahier des charges).</li>
+                        <li>S'adapter aux retours clients réguliers.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
                         <a href="projets.html#unesco" class="badge-link">Chef de projet UNESCO</a>
+                        <a href="projets.html#projet-tetris" class="badge-link">Entretiens client Tetris</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Appliquer une démarche de conduite</div>
+                    <div class="level-title">🚀 BUT 2 : Appliquer une démarche agile</div>
                     <ul>
-                        <li>S'adapter aux retours clients (Méthodes agiles).</li>
-                        <li>Planifier et suivre l'avancement d'un projet de développement (Gantt, Kanban).</li>
+                        <li>Planifier et suivre l'avancement d'un projet de grande envergure.</li>
+                        <li>Livrer des incréments fonctionnels réguliers.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#projet-tetris" class="badge-link">Adaptation client Tetris</a>
-                        <span class="badge-link" style="background-color: #7f8c8d;">E-commerce LEGO</span>
+                        <span class="badge-link but2-badge">Conduite projet LEGO</span>
                     </div>
                 </div>
             </div>
@@ -405,22 +418,23 @@
                     <div class="level-title">🎓 BUT 1 : Intégrer une équipe</div>
                     <ul>
                         <li>Communiquer efficacement au sein d'un groupe.</li>
-                        <li>Utiliser un gestionnaire de version (Git/GitHub).</li>
+                        <li>Se répartir les tâches de développement (Frontend/Backend).</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <span class="badge-link" style="background-color: #95a5a6;">Tous les projets BUT 1</span>
+                        <a href="projets.html#silveternia" class="badge-link">Équipe SilvEterna</a>
+                        <a href="projets.html#unesco" class="badge-link">Équipe UNESCO</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
                     <div class="level-title">🚀 BUT 2 : Structurer le travail collaboratif</div>
                     <ul>
-                        <li>Gérer les conflits de code et les branches sur GitHub.</li>
-                        <li>Répartir les tâches intelligemment selon les compétences de chacun.</li>
+                        <li>Utiliser des outils avancés de gestion de version.</li>
+                        <li>Coordonner l'assemblage de modules développés par différents membres.</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">SilvEterna en équipe</a>
+                        <span class="badge-link but2-badge">Équipe E-commerce LEGO</span>
                     </div>
                 </div>
             </div>
@@ -436,21 +450,26 @@
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Administrer le poste de travail</div>
+                    <div class="level-title">🎓 BUT 1 : Administrer le poste et les services de base</div>
                     <ul>
-                        <li>Utiliser les commandes de base d'un OS (Linux/Windows).</li>
-                        <li>Comprendre l'architecture d'un réseau local (IP, masques).</li>
-                    </ul>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Déployer des services</div>
-                    <ul>
-                        <li>Configurer des services réseaux et des serveurs (Web, BDD).</li>
-                        <li>Appliquer des règles de sécurité basiques.</li>
+                        <li>Configurer des bases de données locales (PostgreSQL).</li>
+                        <li>Mettre en place des serveurs locaux (WAMP/XAMPP pour PHP).</li>
                     </ul>
                     <div class="project-links">
                         <strong>Projets associés :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">Hébergement / BDD PostgreSQL</a>
+                        <a href="projets.html#silveternia" class="badge-link">Configuration Serveur SilvEterna</a>
+                        <a href="projets.html#base-donnees" class="badge-link">Mise en place PostgreSQL</a>
+                    </div>
+                </div>
+                <div class="level-section level-but2">
+                    <div class="level-title">🚀 BUT 2 : Déployer des architectures hétérogènes</div>
+                    <ul>
+                        <li>Gérer l'interconnexion entre différents environnements (PHP, Java, C).</li>
+                        <li>Appliquer des règles de sécurité web sur un site marchand.</li>
+                    </ul>
+                    <div class="project-links">
+                        <strong>Projets associés :</strong>
+                        <span class="badge-link but2-badge">Architecture Serveur LEGO</span>
                     </div>
                 </div>
             </div>
@@ -459,7 +478,7 @@
     </main>
 
     <footer>
-        <p>2026 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
+        <p>2025 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
     </footer>
 </body>
 </html>
