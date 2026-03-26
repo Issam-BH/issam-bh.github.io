@@ -21,6 +21,8 @@
             --white: #ffffff;
             --but1-color: #e8f4f8;
             --but2-color: #fcf3cf;
+            --reflection-bg: #fdf2e9;
+            --reflection-border: #e67e22;
         }
 
         body {
@@ -126,10 +128,6 @@
             margin: 0;
         }
 
-        .competence-icon {
-            font-size: 2.5rem;
-        }
-
         .competence-desc {
             padding: 1rem 1.5rem;
             font-style: italic;
@@ -211,11 +209,49 @@
         }
 
         .badge-link.but2-badge {
-            background-color: #f39c12; /* Une couleur distincte pour les projets BUT 2 */
+            background-color: #f39c12;
         }
 
         .badge-link.but2-badge:hover {
             background-color: #d68910;
+        }
+
+        .reflection-block {
+            background-color: var(--reflection-bg);
+            border-left: 5px solid var(--reflection-border);
+            padding: 1.5rem;
+            margin: 0;
+            border-top: 1px solid #f1e2d3;
+        }
+
+        .reflection-title {
+            color: var(--reflection-border);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reflection-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .reflection-item h4 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .reflection-item p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0;
+            text-align: justify;
         }
 
         footer {
@@ -227,7 +263,7 @@
         }
 
         @media (max-width: 768px) {
-            .levels-container {
+            .levels-container, .reflection-content {
                 grid-template-columns: 1fr;
             }
             .level-section {
@@ -241,7 +277,7 @@
     <header>
         <div class="profile-container">
             <h1>Issam BEN HAMOUDA</h1>
-            <p class="subtitle">Mon Évolution et Mes Compétences</p>
+            <p class="subtitle">Mon Évolution et Mes Compétences - BUT Informatique</p>
         </div>
     </header>
 
@@ -255,14 +291,13 @@
     </nav>
 
     <main>
-        <h2>Le Programme National du BUT Informatique</h2>
+        <h2>Démarche Portfolio et Bilan de Compétences</h2>
         <p class="intro-text">
-            Le BUT Informatique est structuré autour de 6 grandes compétences. Découvrez ci-dessous mon évolution technique et humaine à travers les apprentissages de la 1ère et 2ème année, appliqués directement dans mes projets universitaires.
+            Ce portfolio documente ma trajectoire de développement à travers les 6 compétences du Programme National du BUT Informatique. Il constitue un recueil structuré de preuves illustrant mes apprentissages, mes capacités d'adaptation et ma démarche réflexive, du BUT 1 jusqu'aux réalisations plus complexes du BUT 2.
         </p>
 
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">💻</span>
                 <h3>Réaliser</h3>
             </div>
             <div class="competence-desc">
@@ -270,28 +305,42 @@
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Développer des applications simples</div>
+                    <div class="level-title">Niveau 1 : Développer des applications simples</div>
                     <ul>
-                        <li>Écrire des programmes algorithmiques (Python, Java).</li>
-                        <li>Développer des interfaces web et des applications complètes (HTML, CSS, PHP).</li>
-                        <li>Respecter les principes de qualité de code.</li>
+                        <li>Implémenter des conceptions simples et algorithmiques (Python, Java).</li>
+                        <li>Développer des interfaces utilisateurs interactives (HTML, CSS, PHP).</li>
+                        <li>Respecter les principes de base de qualité de code.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <a href="projets.html#projet-tetris" class="badge-link">SAE Tetris (Python)</a>
                         <a href="projets.html#yams" class="badge-link">Yams (Java)</a>
                         <a href="projets.html#silveternia" class="badge-link">SilvEterna (PHP)</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Développer des applications complexes</div>
+                    <div class="level-title">Niveau 2 : Partir des exigences et aller jusqu'à une application complète</div>
                     <ul>
-                        <li>Concevoir des architectures applicatives.</li>
-                        <li>Intégrer et assembler des modules (PHP, Java, C).</li>
+                        <li>Élaborer et implémenter des spécifications fonctionnelles et non fonctionnelles.</li>
+                        <li>Intégrer et assembler des modules hétérogènes (PHP, Java, C).</li>
+                        <li>Vérifier et valider la qualité de l'application par des tests rigoureux.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Site e-commerce LEGO (En cours)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>Lors de ma première année, j'ai acquis une solide base logique à travers le développement de jeux (Tetris en Python, Yams en Java), ce qui m'a permis de valider le niveau 1 avec succès. La transition vers le niveau 2 se concrétise actuellement via mon projet de site e-commerce de tableaux LEGO. Ce projet démontre ma capacité à ne plus coder de simples scripts isolés, mais à concevoir une architecture logicielle complète où plusieurs langages (PHP, Java, C) doivent communiquer de manière transparente pour répondre aux exigences complexes d'une plateforme transactionnelle.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>Si la phase d'implémentation est désormais maîtrisée, je dois renforcer ma rigueur sur la phase de tests (AC21.04). Durant le projet SilvEterna, les tests étaient souvent effectués manuellement en fin de développement. Pour valider pleinement mon niveau 2, j'intègre désormais une démarche de tests unitaires systématisés sur le projet LEGO, garantissant ainsi la maintenabilité et la stabilité du code sur le long terme.</p>
                     </div>
                 </div>
             </div>
@@ -299,34 +348,46 @@
 
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">⚙️</span>
                 <h3>Optimiser</h3>
             </div>
             <div class="competence-desc">
-                Proposer des applications informatiques optimisées en termes de performances et de ressources.
+                Proposer des applications informatiques optimisées en fonction de critères spécifiques : temps d'exécution, précision, consommation de ressources.
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Appréhender les structures de base</div>
+                    <div class="level-title">Niveau 1 : Appréhender et construire des algorithmes</div>
                     <ul>
-                        <li>Choisir les structures de données adaptées (Graphes, Automates).</li>
-                        <li>Évaluer la complexité d'un algorithme classique.</li>
+                        <li>Analyser un problème avec méthode (découpage, structures de données).</li>
+                        <li>Comparer et évaluer la complexité d'algorithmes classiques.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <a href="projets.html#projet-tetris" class="badge-link">Logique Tetris</a>
                         <a href="projets.html#algorithmes-graphes" class="badge-link">Algorithmes de graphes</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Concevoir des solutions performantes</div>
+                    <div class="level-title">Niveau 2 : Sélectionner les algorithmes adéquats</div>
                     <ul>
-                        <li>Optimiser le temps d'exécution d'une application métier.</li>
-                        <li>Gérer efficacement l'assemblage de différents langages.</li>
+                        <li>Choisir des structures de données complexes adaptées au problème.</li>
+                        <li>Comprendre les enjeux et moyens de sécurisation des données et du code.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Optimisation E-commerce LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>L'implémentation des algorithmes de graphes et d'automates en Python a été une étape clé de mon apprentissage. Ce projet théorique m'a fait prendre conscience de l'impact direct du choix des structures de données sur les temps de traitement. Cette prise de recul m'est aujourd'hui indispensable sur le site e-commerce LEGO, où l'optimisation des requêtes de recherche et l'assemblage dynamique des modules nécessitent des choix algorithmiques pertinents pour éviter de surcharger le serveur.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>Jusqu'à présent, mon critère principal de réussite était de "faire fonctionner" le programme. L'objectif du niveau 2 est d'aller plus loin en profilant l'application pour identifier les goulots d'étranglement mémoires. De plus, l'optimisation passe également par la sécurisation du code (AC22.03), un aspect que j'étudie activement pour protéger la logique métier de la plateforme e-commerce contre d'éventuelles vulnérabilités.</p>
                     </div>
                 </div>
             </div>
@@ -334,72 +395,95 @@
 
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">🗄️</span>
                 <h3>Gérer</h3>
             </div>
             <div class="competence-desc">
-                Concevoir, gérer, administrer et exploiter les bases de données.
+                Concevoir, gérer, administrer et exploiter les données de l'entreprise.
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Exploiter et concevoir une BDD</div>
+                    <div class="level-title">Niveau 1 : Concevoir et mettre en place une base de données</div>
                     <ul>
-                        <li>Modéliser des données (MCD, MLD).</li>
-                        <li>Créer et interroger une base relationnelle (SQL, PostgreSQL).</li>
-                        <li>Relier une base de données à une interface Web (PHP).</li>
+                        <li>Modéliser des données (MCD, MLD) selon un cahier des charges.</li>
+                        <li>Créer, mettre à jour et interroger une base relationnelle (SQL, PostgreSQL).</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <a href="projets.html#base-donnees" class="badge-link">SAE BDD (Vétérinaire)</a>
                         <a href="projets.html#silveternia" class="badge-link">BDD SilvEterna</a>
                         <a href="projets.html#unesco" class="badge-link">Projet UNESCO</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Administrer des bases complexes</div>
+                    <div class="level-title">Niveau 2 : Optimiser une base de données et mettre en œuvre la sécurité</div>
                     <ul>
-                        <li>Gérer des bases de données avancées pour des sites e-commerce.</li>
-                        <li>Assurer la sécurité et l'intégrité des transactions SQL.</li>
+                        <li>Optimiser les modèles de données complexes de l'entreprise.</li>
+                        <li>Assurer la sécurité des données (intégrité, confidentialité).</li>
+                        <li>Manipuler des données hétérogènes.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">BDD E-commerce LEGO</span>
                     </div>
                 </div>
             </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>La gestion de l'information est l'une des compétences où je me sens le plus solide. Le développement du Modèle Conceptuel de Données et l'implémentation sous PostgreSQL pour le cabinet vétérinaire et le réseau SilvEterna constituent des preuves directes de ma maîtrise du niveau 1. J'ai prouvé ma capacité à transcrire un besoin métier en un schéma relationnel cohérent et à écrire des requêtes avec jointures complexes via PHP.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>Pour la validation du niveau 2, mon défi actuel sur le projet e-commerce LEGO est la gestion de la sécurité (AC24.02). Il ne suffit plus de stocker l'information, il faut la protéger. Je concentre donc mes efforts sur le hachage des mots de passe, la prévention des injections SQL (utilisation de requêtes préparées systématiques) et la garantie de l'intégrité transactionnelle lors des commandes clients.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">🎯</span>
                 <h3>Conduire</h3>
             </div>
             <div class="competence-desc">
-                Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client.
+                Organiser et piloter un projet informatique avec des méthodes classiques ou agiles.
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Comprendre les besoins</div>
+                    <div class="level-title">Niveau 1 : Identifier les besoins métiers des clients</div>
                     <ul>
-                        <li>Assumer le rôle de chef de projet.</li>
-                        <li>Identifier les exigences d'un client (réunions, cahier des charges).</li>
-                        <li>S'adapter aux retours clients réguliers.</li>
+                        <li>Appréhender et formaliser les besoins du client et de l'utilisateur.</li>
+                        <li>Mettre en place des outils de gestion de projet de base.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
-                        <a href="projets.html#unesco" class="badge-link">Chef de projet UNESCO</a>
-                        <a href="projets.html#projet-tetris" class="badge-link">Entretiens client Tetris</a>
+                        <strong>Preuves d'apprentissage :</strong>
+                        <a href="projets.html#unesco" class="badge-link">Gestion Projet UNESCO</a>
+                        <a href="projets.html#projet-tetris" class="badge-link">Cahier des charges Tetris</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Appliquer une démarche agile</div>
+                    <div class="level-title">Niveau 2 : Appliquer une démarche de suivi de projet</div>
                     <ul>
-                        <li>Planifier et suivre l'avancement d'un projet de grande envergure.</li>
-                        <li>Livrer des incréments fonctionnels réguliers.</li>
+                        <li>Identifier les critères de faisabilité d'un projet informatique.</li>
+                        <li>Définir et mettre en œuvre une démarche de suivi itérative.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
-                        <span class="badge-link but2-badge">Conduite projet LEGO</span>
+                        <strong>Preuves d'apprentissage :</strong>
+                        <span class="badge-link but2-badge">Conduite de projet E-commerce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>Mon rôle de chef de projet sur le site internet de l'UNESCO a été particulièrement formateur. J'ai dû structurer la répartition des tâches, animer l'équipe et veiller au respect des délais. Les entretiens réguliers menés lors du projet Tetris m'ont également appris à écouter les attentes d'un "client" et à ajuster les développements en conséquence, validant pleinement mes acquis de première année.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>Mon principal axe d'amélioration réside dans l'évaluation de la faisabilité (AC25.03) et l'estimation du temps nécessaire aux développements. J'ai parfois sous-estimé la complexité de certaines fonctionnalités backend. Actuellement, l'adoption de méthodologies plus agiles sur le projet LEGO me permet de livrer des incréments réguliers, de mieux gérer l'imprévu et de fluidifier le suivi avec l'ensemble de l'équipe.</p>
                     </div>
                 </div>
             </div>
@@ -407,34 +491,46 @@
 
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">🤝</span>
                 <h3>Collaborer</h3>
             </div>
             <div class="competence-desc">
-                Acquérir, développer et exploiter les aptitudes nécessaires pour travailler dans une équipe informatique.
+                Travailler efficacement dans une équipe informatique, développer une communication collaborative.
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Intégrer une équipe</div>
+                    <div class="level-title">Niveau 1 : Identifier ses aptitudes en équipe</div>
                     <ul>
-                        <li>Communiquer efficacement au sein d'un groupe.</li>
-                        <li>Se répartir les tâches de développement (Frontend/Backend).</li>
+                        <li>Acquérir les compétences interpersonnelles pour le travail de groupe.</li>
+                        <li>Comprendre la répartition des rôles (Frontend, Backend, Base de données).</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
+                        <strong>Preuves d'apprentissage :</strong>
                         <a href="projets.html#silveternia" class="badge-link">Équipe SilvEterna</a>
                         <a href="projets.html#unesco" class="badge-link">Équipe UNESCO</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Structurer le travail collaboratif</div>
+                    <div class="level-title">Niveau 2 : Situer son rôle et ses missions</div>
                     <ul>
-                        <li>Utiliser des outils avancés de gestion de version.</li>
-                        <li>Coordonner l'assemblage de modules développés par différents membres.</li>
+                        <li>Mobiliser des outils collaboratifs avancés (Git, GitHub).</li>
+                        <li>Rendre compte de son activité professionnelle de manière structurée.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
-                        <span class="badge-link but2-badge">Équipe E-commerce LEGO</span>
+                        <strong>Preuves d'apprentissage :</strong>
+                        <span class="badge-link but2-badge">Dépôt Git E-commerce LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>La collaboration est une force naturelle chez moi. Durant le développement de SilvEterna, mon rôle backend nécessitait une communication constante et transparente avec les développeurs frontend pour garantir la bonne intégration des données. J'ai prouvé ma capacité à m'adapter aux contraintes techniques de mes collègues et à proposer des solutions communes pour faire avancer le projet global.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>Si la communication orale est acquise, l'utilisation rigoureuse des outils de versionning (Git) a demandé un temps d'adaptation, notamment lors de la résolution de conflits de code multiples. C'est aujourd'hui un point de focalisation majeur dans ma méthode de travail de deuxième année. Je cherche également à améliorer la manière dont je documente et rends compte de mon travail technique (AC26.04) pour faciliter l'intégration de nouveaux développeurs sur mes projets.</p>
                     </div>
                 </div>
             </div>
@@ -442,34 +538,46 @@
         
         <section class="competence-card">
             <div class="competence-header">
-                <span class="competence-icon">🛠️</span>
                 <h3>Administrer</h3>
             </div>
             <div class="competence-desc">
-                Installer, configurer, mettre à disposition, sécuriser et maintenir des services informatiques.
+                Installer, configurer, mettre à disposition et maintenir des services et architectures réseaux.
             </div>
             <div class="levels-container">
                 <div class="level-section level-but1">
-                    <div class="level-title">🎓 BUT 1 : Administrer le poste et les services de base</div>
+                    <div class="level-title">Niveau 1 : Installer et configurer un poste de travail</div>
                     <ul>
-                        <li>Configurer des bases de données locales (PostgreSQL).</li>
-                        <li>Mettre en place des serveurs locaux (WAMP/XAMPP pour PHP).</li>
+                        <li>Installer et configurer un système d'exploitation et des outils de développement.</li>
+                        <li>Configurer des services locaux de base.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">Configuration Serveur SilvEterna</a>
-                        <a href="projets.html#base-donnees" class="badge-link">Mise en place PostgreSQL</a>
+                        <strong>Preuves d'apprentissage :</strong>
+                        <a href="projets.html#silveternia" class="badge-link">Environnement WAMP/XAMPP</a>
+                        <a href="projets.html#base-donnees" class="badge-link">Configuration PostgreSQL</a>
                     </div>
                 </div>
                 <div class="level-section level-but2">
-                    <div class="level-title">🚀 BUT 2 : Déployer des architectures</div>
+                    <div class="level-title">Niveau 2 : Déployer des services dans une architecture</div>
                     <ul>
-                        <li>Gérer l'interconnexion entre différents environnements (PHP, Java, C).</li>
-                        <li>Appliquer des règles de sécurité web sur un site marchand.</li>
+                        <li>Concevoir des applications communicantes.</li>
+                        <li>Sécuriser les services et données d'un système.</li>
                     </ul>
                     <div class="project-links">
-                        <strong>Projets associés :</strong>
-                        <span class="badge-link but2-badge">Architecture Serveur LEGO</span>
+                        <strong>Preuves d'apprentissage :</strong>
+                        <span class="badge-link but2-badge">Déploiement Serveur LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif & Critique</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Acquis et démonstration de la compétence</h4>
+                        <p>J'ai développé une solide autonomie pour préparer et administrer mes environnements de développement locaux. Que ce soit la configuration d'un serveur Apache pour héberger les scripts PHP ou la mise en route du service PostgreSQL pour SilvEterna, j'ai su rendre ces systèmes opérationnels pour permettre à l'équipe de travailler efficacement en local.</p>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Axes d'amélioration et perspectives</h4>
+                        <p>L'administration système et réseau est la compétence qui me demande actuellement le plus d'efforts. Le passage d'un environnement local à un véritable déploiement de services virtualisés (AC23.02) représente un défi technique. Je prévois de m'investir davantage dans l'apprentissage des environnements Linux et de la conteneurisation pour maîtriser totalement le cycle de déploiement de mes futures applications web.</p>
                     </div>
                 </div>
             </div>
@@ -478,7 +586,7 @@
     </main>
 
     <footer>
-        <p>2025 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
+        <p>2026 Issam BEN HAMOUDA - Portfolio BUT Informatique</p>
     </footer>
 </body>
 </html>
