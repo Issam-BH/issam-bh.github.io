@@ -21,6 +21,8 @@
             --white: #ffffff;
             --but1-color: #e8f4f8;
             --but2-color: #fcf3cf;
+            --reflection-bg: #fdf2e9;
+            --reflection-border: #e67e22;
         }
 
         body {
@@ -110,7 +112,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 3rem;
             overflow: hidden;
-            scroll-margin-top: 2rem; /* Permet un bel espacement lors du défilement depuis l'accueil */
+            scroll-margin-top: 2rem;
         }
 
         .competence-header {
@@ -224,6 +226,48 @@
             background-color: #d35400;
         }
 
+        /* Styles pour le bloc réflexif mis à jour */
+        .reflection-block {
+            background-color: var(--reflection-bg);
+            border-left: 5px solid var(--reflection-border);
+            padding: 1.5rem;
+            margin: 0;
+            border-top: 1px solid #f1e2d3;
+        }
+
+        .reflection-title {
+            color: var(--reflection-border);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reflection-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .reflection-item h4 {
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+        }
+
+        .reflection-item ul {
+            margin-left: 1.5rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .reflection-item li {
+            margin-bottom: 0.5rem;
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -233,7 +277,7 @@
         }
 
         @media (max-width: 768px) {
-            .levels-container {
+            .levels-container, .reflection-content {
                 grid-template-columns: 1fr;
             }
             .level-section {
@@ -303,6 +347,26 @@
                     </div>
                 </div>
             </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Concevoir et développer des applications de bout en bout (Frontend et Backend).</li>
+                            <li>Traduire un besoin client en spécifications techniques et algorithmiques.</li>
+                            <li>Assurer l'intégration de différents langages (PHP, Java, C) au sein d'un même projet.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Systématiser les tests unitaires avant la mise en production.</li>
+                            <li>Optimiser l'architecture globale du code pour faciliter sa maintenance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="optimiser" class="competence-card">
@@ -316,8 +380,8 @@
                 <div class="level-section level-but1">
                     <div class="level-title">Niveau 1 : Appréhender et construire des algorithmes</div>
                     <ul>
-                        <li>Analyser un problème avec méthode (découpage en éléments, algorithmiques simples, structures de données...) (AC12.01).</li>
-                        <li>Comparer des algorithmes pour des problèmes classiques simples (tris, recherche...) (AC12.02).</li>
+                        <li>Analyser un problème avec méthode (découpage en éléments, structuration de données) (AC12.01).</li>
+                        <li>Comparer des algorithmes classiques (AC12.02).</li>
                         <li>Formaliser et mettre en œuvre des outils mathématiques pour l'informatique (AC12.03).</li>
                     </ul>
                     <div class="project-links">
@@ -337,6 +401,26 @@
                     <div class="project-links">
                         <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Optimisation E-commerce LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Choisir les structures de données (graphes, automates) adaptées pour réduire la complexité.</li>
+                            <li>Analyser et comparer le temps d'exécution de différents algorithmes.</li>
+                            <li>Prendre en compte les contraintes de ressources matérielles lors du développement.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Mieux profiler les applications pour identifier rapidement les goulots d'étranglement.</li>
+                            <li>Intégrer la sécurisation du code (protection contre les failles) dès la phase de conception.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -374,6 +458,25 @@
                     <div class="project-links">
                         <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Architecture Serveur LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Configurer des services réseau : DNS, DHCP, Proxy HTTP.</li>
+                            <li>Sécuriser les accès avec la configuration d'un pare-feu.</li>
+                            <li>Gérer des services virtualisés à l'aide de Docker et Proxmox.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Documenter de manière détaillée l'architecture réseau.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -415,6 +518,26 @@
                     </div>
                 </div>
             </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Modéliser proprement une base de données relationnelle (MCD, MLD, MPD).</li>
+                            <li>Interroger et mettre à jour les données via des requêtes SQL complexes (PostgreSQL).</li>
+                            <li>Connecter de manière sécurisée une application web à sa base de données.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Mieux sécuriser les données sensibles (prévention stricte des injections SQL, hachage).</li>
+                            <li>Optimiser les requêtes lourdes sur de gros volumes de données.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="conduire" class="competence-card">
@@ -449,6 +572,26 @@
                     <div class="project-links">
                         <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Conduite Projet E-commerce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Recueillir et analyser les besoins d'un client pour rédiger un cahier des charges précis.</li>
+                            <li>Répartir les tâches et utiliser des outils de suivi de projet efficaces (Kanban, Gantt).</li>
+                            <li>S'adapter aux changements de spécifications en cours de développement.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Mieux estimer le temps de réalisation technique de chaque tâche.</li>
+                            <li>Anticiper davantage les risques liés à la faisabilité globale du projet.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -487,6 +630,26 @@
                     <div class="project-links">
                         <strong>Preuves d'apprentissage :</strong>
                         <span class="badge-link but2-badge">Travail de groupe LEGO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reflection-block">
+                <div class="reflection-title">Bilan Réflexif</div>
+                <div class="reflection-content">
+                    <div class="reflection-item">
+                        <h4>Ce que j'ai compris de cette compétence</h4>
+                        <ul>
+                            <li>Travailler efficacement en équipe avec une répartition claire (Frontend / Backend).</li>
+                            <li>Utiliser Git et GitHub de manière collaborative pour le versioning du code.</li>
+                            <li>Communiquer techniquement avec les autres membres pour l'intégration des différents modules.</li>
+                        </ul>
+                    </div>
+                    <div class="reflection-item">
+                        <h4>Mes points à travailler</h4>
+                        <ul>
+                            <li>Maîtriser sereinement la résolution des conflits de fusion (merge conflicts) sur Git.</li>
+                            <li>Rédiger des comptes rendus d'activité technique plus réguliers et détaillés.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
