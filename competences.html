@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Compétences - Portfolio BUT Informatique</title>
+    <title>Portfolio - Issam BEN HAMOUDA - BUT Informatique</title>
     <style>
         * {
             margin: 0;
@@ -19,8 +19,7 @@
             --text-color: #333;
             --light-bg: #f5f5f5;
             --white: #ffffff;
-            --but1-color: #e8f4f8;
-            --but2-color: #fcf3cf;
+            --highlight-bg: #f0f8ff;
         }
 
         body {
@@ -63,7 +62,6 @@
             justify-content: center;
             list-style: none;
             gap: 2rem;
-            flex-wrap: wrap;
         }
 
         nav a {
@@ -90,137 +88,144 @@
             padding: 0 2rem;
         }
 
+        section {
+            margin-bottom: 3rem;
+        }
+
         h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--primary-color);
-            text-align: center;
         }
 
-        .intro-text {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
         }
 
-        .competence-card {
+        .about-text {
+            flex: 2;
+        }
+
+        .skills {
+            flex: 1;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
             background-color: var(--white);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 3rem;
             overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
         }
 
-        .competence-header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1.5rem;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: #e0e0e0;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 2px;
         }
 
-        .competence-header h3 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .competence-desc {
+        .project-info {
             padding: 1.5rem;
-            font-style: italic;
-            color: #2c3e50;
-            border-bottom: 1px solid #eee;
-            background-color: #fdfefe;
-            font-weight: 500;
         }
 
-        .levels-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
         }
 
-        .level-section {
-            padding: 1.5rem;
-            border-right: 1px solid #eee;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s;
         }
 
-        .level-section:last-child {
-            border-right: none;
+        .social-link:hover {
+            transform: translateY(-5px);
         }
 
-        .level-but1 {
-            background-color: var(--but1-color);
-        }
-
-        .level-but2 {
-            background-color: var(--but2-color);
-        }
-
-        .level-title {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: bold;
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            border-bottom: 2px solid rgba(0,0,0,0.1);
-            padding-bottom: 0.5rem;
-        }
-
-        .level-section ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #444;
-            font-size: 0.95rem;
-        }
-
-        .level-section li {
+            justify-content: center;
             margin-bottom: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 12px;
         }
 
-        .project-links {
-            margin-top: auto;
-            padding-top: 1rem;
-            border-top: 1px dashed #ccc;
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
-        .project-links strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .badge-link {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.3s;
+        .social-name {
             font-weight: bold;
-        }
-
-        .badge-link:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .badge-link.but2-badge {
-            background-color: #e67e22;
-        }
-
-        .badge-link.but2-badge:hover {
-            background-color: #d35400;
         }
 
         footer {
@@ -232,12 +237,22 @@
         }
 
         @media (max-width: 768px) {
-            .levels-container {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
-            .level-section {
-                border-right: none;
-                border-bottom: 1px solid #eee;
+
+            .social-links {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -246,251 +261,180 @@
     <header>
         <div class="profile-container">
             <h1>Issam BEN HAMOUDA</h1>
-            <p class="subtitle">Démarche Portfolio - BUT Informatique</p>
+            <p class="subtitle">Étudiant en BUT Informatique - 2ème année</p>
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="projets.html">Mes Projets</a></li>
-            <li><a href="competences.html" class="active">Compétences</a></li>
+            <li><a href="competences.html">Compétences</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Référentiel de Compétences du BUT</h2>
-        <p class="intro-text">
-            Ce portfolio s'appuie sur le Programme National du BUT Informatique. Il documente ma progression à travers les 6 compétences fondamentales, en mettant en relation les apprentissages critiques (AC) attendus avec les situations professionnelles rencontrées lors de mes projets universitaires.
-        </p>
-
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Réaliser</h3>
-            </div>
-            <div class="competence-desc">
-                Développer - c'est-à-dire concevoir, coder, tester et intégrer - une solution informatique pour un client.
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Développer des applications informatiques simples</div>
-                    <ul>
-                        <li>Implémenter des conceptions simples (AC11.01).</li>
-                        <li>Élaborer des applications simples (AC11.02).</li>
-                        <li>Faire des essais et évaluer les résultats en regard des spécifications (AC11.03).</li>
-                        <li>Développer des interfaces utilisateurs (AC11.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#projet-tetris" class="badge-link">SAE Tetris</a>
-                        <a href="projets.html#yams" class="badge-link">Yams JAVA</a>
-                        <a href="projets.html#silveternia" class="badge-link">SilvEterna</a>
-                    </div>
+        <section id="about">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Bonjour ! Je suis étudiant en deuxième année de BUT Informatique à l'IUT de Marne-la-Vallée. Passionné par la programmation, je suis à la recherche de nouvelles connaissances et compétences dans l'informatique.</p>
+                    <br>
+                    <p>Grâce à ma formation, j’ai acquis des compétences en programmation (Python, Java, C), en gestion de projets informatiques et en résolution de problématiques techniques. Je maîtrise la création de sites web (HTML, CSS, JavaScript, React, Node.js) et la gestion de bases de données (SQL, PostgreSQL, PHP, MongoDB). J’ai conçu des sites et un portfolio, tout en développant un sens de la rigueur et du travail en équipe, notamment en tant que chef de projet universitaire.</p>
+                    <br>
+                    <p>Ce portfolio présente mes projets universitaires ainsi que mes compétences techniques. N'hésitez pas à me contacter pour échanger sur des projets !</p>
                 </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Partir des exigences et aller jusqu'à une application complète</div>
-                    <ul>
-                        <li>Élaborer et implémenter les spécifications fonctionnelles et non fonctionnelles à partir des exigences (AC21.01).</li>
-                        <li>Appliquer des principes d'accessibilité et d'ergonomie (AC21.02).</li>
-                        <li>Adopter de bonnes pratiques de conception et de programmation (AC21.03).</li>
-                        <li>Vérifier et valider la qualité de l'application par les tests (AC21.04).</li>
+                <div class="skills">
+                    <h3>Connaissances</h3>
+                    <ul class="skills-list">
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>Node.Js</li>
+                        <li>PHP</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>MySQL / PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>C</li>
                     </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">Site e-commerce LEGO</span>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Optimiser</h3>
-            </div>
-            <div class="competence-desc">
-                Proposer des applications informatiques optimisées en fonction de critères spécifiques : temps d'exécution, précision, consommation de ressources...
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Appréhender et construire des algorithmes</div>
-                    <ul>
-                        <li>Analyser un problème avec méthode (découpage en éléments, structuration de données) (AC12.01).</li>
-                        <li>Comparer des algorithmes classiques (AC12.02).</li>
-                        <li>Formaliser et mettre en œuvre des outils mathématiques pour l'informatique (AC12.03).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#projet-tetris" class="badge-link">Logique Tetris</a>
-                        <a href="projets.html#algorithmes-graphes" class="badge-link">Algorithmes de graphes</a>
+        <section id="projects-preview">
+            <h2>Projets récents</h2>
+            <div class="projects-grid">
+                <a href="projets.html#projet-tetris" class="project-card">
+                    <div class="project-image">DEV</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Projet Tetris</h3>
+                        <p>Développement d'un jeu Tetris en fonction des demandes clients avec ajout de variantes.</p>
                     </div>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Sélectionner les algorithmes adéquats pour répondre à un problème donné</div>
-                    <ul>
-                        <li>Choisir des structures de données complexes adaptées au problème (AC22.01).</li>
-                        <li>Utiliser des techniques algorithmiques adaptées pour des problèmes complexes (AC22.02).</li>
-                        <li>Comprendre les enjeux et moyens de sécurisation des données et du code (AC22.03).</li>
-                        <li>Évaluer l'impact environnemental et sociétal des solutions proposées (AC22.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">Optimisation E-commerce LEGO</span>
+                </a>
+
+                <a href="projets.html#unesco" class="project-card">
+                    <div class="project-image">WEB</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Projet UNESCO</h3>
+                        <p>Création d'un site internet en partenariat avec l'UNESCO sur les quais de Seine à Paris.</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="projets.html#base-donnees" class="project-card">
+                    <div class="project-image">BDD</div>
+                    <div class="project-info">
+                        <h3 class="project-title">SAE Base de données</h3>
+                        <p>Conception et implémentation d'une base de données relationnelle pour un cabinet vétérinaire.</p>
+                    </div>
+                </a>
+
+                <a href="projets.html#silveternia" class="project-card">
+                    <div class="project-image">PHP</div>
+                    <div class="project-info">
+                        <h3 class="project-title">SilvEterna</h3>
+                        <p>Réseau social destiné aux seniors, développé en PHP et PostgreSQL.</p>
+                    </div>
+                </a>
+
+                <a href="projets.html#yams" class="project-card">
+                    <div class="project-image">JAVA</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Yams / Yatzee</h3>
+                        <p>Jeu de dés en Java avec gestion des scores et logique de programmation orientée objet.</p>
+                    </div>
+                </a>
+
+                <a href="projets.html#algorithmes-graphes" class="project-card">
+                    <div class="project-image">ALGO</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Algorithmes de graphes</h3>
+                        <p>Implémentation d'algorithmes de graphes et d'automates en Python.</p>
+                    </div>
+                </a>
             </div>
         </section>
 
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Gérer</h3>
-            </div>
-            <div class="competence-desc">
-                Concevoir, gérer, administrer et exploiter les données de l'entreprise et mettre à disposition toutes les informations pour un bon pilotage de l'entreprise.
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Concevoir et mettre en place une base de données à partir d'un cahier des charges client</div>
-                    <ul>
-                        <li>Mettre à jour et interroger une base de données relationnelle (AC14.01).</li>
-                        <li>Visualiser des données (AC14.02).</li>
-                        <li>Concevoir une base de données relationnelle à partir d'un cahier des charges (AC14.03).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#base-donnees" class="badge-link">SAE BDD Vétérinaire</a>
-                        <a href="projets.html#silveternia" class="badge-link">BDD SilvEterna</a>
-                        <a href="projets.html#unesco" class="badge-link">Projet UNESCO</a>
+        <section id="competences-pn">
+            <h2>Compétences du BUT Informatique</h2>
+            <div class="projects-grid">
+                
+                <a href="competences.html#realiser" class="project-card">
+                    <div class="project-image">RÉA</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Réaliser</h3>
+                        <p>Développer — c'est-à-dire concevoir, coder, tester et intégrer — une solution informatique pour un client.</p>
                     </div>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité</div>
-                    <ul>
-                        <li>Optimiser les modèles de données de l'entreprise (AC24.01).</li>
-                        <li>Assurer la sécurité des données (intégrité et confidentialité) (AC24.02).</li>
-                        <li>Organiser la restitution de données à travers la programmation et la visualisation (AC24.03).</li>
-                        <li>Manipuler des données hétérogènes (AC24.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">BDD E-commerce LEGO</span>
+                </a>
+
+                <a href="competences.html#optimiser" class="project-card">
+                    <div class="project-image">OPT</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Optimiser</h3>
+                        <p>Proposer des applications informatiques optimisées en fonction de critères spécifiques : temps d'exécution, précision...</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="competences.html#administrer" class="project-card">
+                    <div class="project-image">ADM</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Administrer</h3>
+                        <p>Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures et des services.</p>
+                    </div>
+                </a>
+
+                <a href="competences.html#gerer" class="project-card">
+                    <div class="project-image">GÉR</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Gérer</h3>
+                        <p>Concevoir, gérer, administrer et exploiter les données de l'entreprise pour un bon pilotage.</p>
+                    </div>
+                </a>
+
+                <a href="competences.html#conduire" class="project-card">
+                    <div class="project-image">CON</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Conduire</h3>
+                        <p>Satisfaire les besoins des utilisateurs, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.</p>
+                    </div>
+                </a>
+
+                <a href="competences.html#collaborer" class="project-card">
+                    <div class="project-image">COL</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Collaborer</h3>
+                        <p>Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.</p>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Conduire</h3>
-            </div>
-            <div class="competence-desc">
-                Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Identifier les besoins métiers des clients et des utilisateurs</div>
-                    <ul>
-                        <li>Appréhender les besoins du client et de l'utilisateur (AC15.01).</li>
-                        <li>Mettre en place un outil de gestion de projet (AC15.02).</li>
-                        <li>Identifier les acteurs et les différentes phases d'un cycle de développement (AC15.03).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#unesco" class="badge-link">Gestion Projet UNESCO</a>
-                        <a href="projets.html#projet-tetris" class="badge-link">Suivi Client Tetris</a>
+        <section id="contact">
+            <h2>Contact & Liens</h2>
+            <div class="social-links">
+                <a href="CV_BEN_HAMOUDA_ISSAM.pdf" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <img src="cv.png" alt="CV">
                     </div>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Appliquer une démarche de suivi de projet en fonction des besoins métiers</div>
-                    <ul>
-                        <li>Identifier les processus présents dans une organisation (AC25.01).</li>
-                        <li>Formaliser les besoins du client et de l'utilisateur (AC25.02).</li>
-                        <li>Identifier les critères de faisabilité d'un projet informatique (AC25.03).</li>
-                        <li>Définir et mettre en œuvre une démarche de suivi de projet (AC25.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">Conduite Projet E-commerce</span>
+                    <span class="social-name">CV</span>
+                </a>
+                <a href="https://github.com/Issam-BH" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <img src="github.png" alt="GitHub">
                     </div>
-                </div>
+                    <span class="social-name">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/issam-ben-hamouda-352010339/" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <img src="linkedin.png" alt="LinkedIn">
+                    </div>
+                    <span class="social-name">LinkedIn</span>
+                </a>
             </div>
         </section>
-
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Collaborer</h3>
-            </div>
-            <div class="competence-desc">
-                Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Identifier ses aptitudes pour travailler dans une équipe</div>
-                    <ul>
-                        <li>Appréhender l'écosystème numérique (AC16.01).</li>
-                        <li>Découvrir les métiers de l'informatique (AC16.02).</li>
-                        <li>Identifier les statuts et rôles de chaque membre d'une équipe pluridisciplinaire (AC16.03).</li>
-                        <li>Acquérir les compétences interpersonnelles pour travailler en équipe (AC16.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">Équipe SilvEterna</a>
-                        <a href="projets.html#unesco" class="badge-link">Équipe UNESCO</a>
-                    </div>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Situer son rôle et ses missions au sein d'une équipe informatique</div>
-                    <ul>
-                        <li>Comprendre la diversité et la dimension de l'informatique dans une organisation (AC26.01).</li>
-                        <li>Appliquer une démarche pour intégrer une équipe informatique (AC26.02).</li>
-                        <li>Mobiliser les compétences interpersonnelles pour travailler dans une équipe (AC26.03).</li>
-                        <li>Rendre compte de son activité professionnelle (AC26.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">Travail de groupe LEGO</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="competence-card">
-            <div class="competence-header">
-                <h3>Administrer</h3>
-            </div>
-            <div class="competence-desc">
-                Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d'une organisation.
-            </div>
-            <div class="levels-container">
-                <div class="level-section level-but1">
-                    <div class="level-title">Niveau 1 : Installer et configurer un poste de travail</div>
-                    <ul>
-                        <li>Identifier les différents composants d'un système numérique (AC13.01).</li>
-                        <li>Utiliser les commandes de base d'un système d'exploitation (AC13.02).</li>
-                        <li>Installer et configurer un système d'exploitation et des outils de développement (AC13.03).</li>
-                        <li>Configurer un poste de travail dans un réseau d'entreprise (AC13.04).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <a href="projets.html#silveternia" class="badge-link">Environnement de dev.</a>
-                        <a href="projets.html#base-donnees" class="badge-link">Configuration Serveur</a>
-                    </div>
-                </div>
-                <div class="level-section level-but2">
-                    <div class="level-title">Niveau 2 : Déployer des services dans une architecture réseau</div>
-                    <ul>
-                        <li>Concevoir et développer des applications communicantes (AC23.01).</li>
-                        <li>Utiliser des serveurs et des services réseaux virtualisés (AC23.02).</li>
-                        <li>Sécuriser les services et données d'un système (AC23.03).</li>
-                    </ul>
-                    <div class="project-links">
-                        <strong>Preuves d'apprentissage :</strong>
-                        <span class="badge-link but2-badge">Architecture Serveur LEGO</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer>
